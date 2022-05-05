@@ -1,0 +1,144 @@
+/***
+    The new CSS reset - version 1.6.0 (last updated 29.4.2022)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+ *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+    cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+    list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+    max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+    -webkit-appearance: revert;
+    appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+    color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+    display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly. */
+:where([contenteditable]) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+    -webkit-user-drag: element;
+}
+
+
+/*page style starts here*/
+body{
+    background-color: rgb(41, 46, 41);
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.container{
+    max-width: 100%;
+    padding: 40px 100px;
+    text-align: center;
+}
+.heading h1{
+    color: rgb(233, 225, 225);
+    font-size: 44px;
+    font-family: 'Roboto ExtraBold', sans-serif;
+    text-align: left;
+    text-shadow: 2px 4px 12px rgb(0, 0, 0, 0.3), 2px 4px 8px wheat;
+}
+.heading1{
+    font-size: 28px;
+}
+.title{
+    color: rgb(216, 40, 40);
+    font-family: 'Roboto Medium', sans-serif;
+}
+.date{
+    color: wheat;
+    font-family: 'Roboto Medium', sans-serif;
+}
+.paragraph p{
+    color: rgb(148, 142, 142);
+    font-size: 22px;
+    font-family: 'Roboto Medium', sans-serif;
+    text-align: left;
+    padding: 20px 0;
+    line-height: 1.5;
+}
+.heading2{
+    color: rgb(233, 225, 225);
+    font-size: 44px;
+    font-family: 'Roboto ExtraBold', sans-serif;
+    padding: 30px 0;
+    text-align: left;
+    text-shadow: 2px 4px 12px rgb(0, 0, 0, 0.3), 2px 4px 8px wheat;
+}
+.paragraph2 p{
+    color: rgb(148, 142, 142);
+    font-size: 22px;
+    font-family: 'Roboto Medium', sans-serif;
+    text-align: left;
+    padding: 20px 0;
+    line-height: 1.5;
+}
+@font-face{
+    font-family: 'Roboto Medium', sans-serif;
+    src: url(roboto-slab/static/RobotoSlab-Medium.ttf);
+}
+@font-face{
+    font-family: 'Roboto ExtraBold', sans-serif;
+    src: url(roboto-slab/static/RobotoSlab-ExtraBold.ttf);
+}
