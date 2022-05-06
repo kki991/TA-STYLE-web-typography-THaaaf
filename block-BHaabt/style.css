@@ -1,0 +1,318 @@
+/***
+    The new CSS reset - version 1.6.0 (last updated 29.4.2022)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+ *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+    cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+    list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+    max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+    -webkit-appearance: revert;
+    appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+    color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+    display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly. */
+:where([contenteditable]) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+    -webkit-user-drag: element;
+}
+
+/*font family   css rules
+
+font-family: 'DM Serif Display', serif;
+font-family: 'Karla', sans-serif;
+
+*/
+
+/* CUSTOM STYLES */
+.flex{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+body{
+    width: 100vw;
+    font-family: 'Karla', sans-serif;
+}
+.container{
+    width: 90%;
+    padding: 30px 5%;
+    margin: 0 auto;
+}
+.header{
+    align-items: center;
+}
+.logo-link{
+    color: rgb(45,38,64);
+    font-size: 36px;
+    font-family: 'DM Serif Display', serif;
+}
+.nav-link{
+    color: rgb(107, 103, 96);
+    font-size: 20px;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+.nav-link-box1{
+    color: rgb(107, 103, 96);
+    font-size: 20px;
+    padding: 15px;
+    text-transform: uppercase;
+    border: 2px solid rgb(114, 113, 111);
+    border-radius: 8px;
+}
+.nav-link-box2{
+    color: #ffff;
+    font-size: 20px;
+    text-transform: uppercase;
+    border: 2px solid rgb(209, 208, 206);
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+    display: inline-block;
+}
+h1{
+    font-family: 'DM Serif Display', serif;
+    font-size: 64px;
+    color: #ffff;
+    width: 80%;
+}
+.hero{
+    background-color: rgb(45,38,64);
+    height: 55vh;
+    width: 100%;
+    position: relative;
+}
+.hero-div{
+    width: 50%;
+    padding: 2.5%;
+    margin-left: 60px;
+}
+.whiteline{
+    background-color: #ffff;
+    height: 2px;
+    width: 40%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.image1{
+    position: absolute;
+    top: 60px;
+    right: 100px;
+}
+.image1 img{
+    max-width: 520px;
+}
+.para1{
+    font-size: 22px;
+    color: #ffff;
+    line-height: 1.5;
+}
+.about-part{
+    width: 100%;
+    margin-top: 200px;
+}
+.image2{
+    width: 40%;
+}
+.image2 img{
+    width: 100%;
+}
+.heading2{
+    width: 40%;
+}
+.heading2 h2{
+    color: #000;
+    font-size: 44px;
+    font-family: 'DM Serif Display', serif;
+    margin-top: 120px;
+    padding: 15px 0;
+}
+.para2{
+    font-size: 22px;
+    color: rgb(107, 103, 96);
+    line-height: 1.5;
+}
+.nav-link-box3{
+    color: rgb(107, 103, 96);
+    font-size: 20px;
+    padding: 15px;
+    text-transform: uppercase;
+    border: 2px solid rgb(114, 113, 111);
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 30px;
+}
+.wheatline{
+    background-color: rgb(199, 195, 189);
+    height: 3px;
+    width: 15%;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+.heading3{
+    color: #000;
+    font-size: 44px;
+    font-family: 'DM Serif Display', serif;
+    padding: 15px 0;
+}
+.box4{
+    width: 30%;
+}
+.setting-icon{
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background-color: rgb(157, 167, 163);
+    position: relative;
+}
+.setting-icon i{
+    color: rgb(53, 116, 124);
+    font-size: 36px;
+    position: absolute;
+    top: 18px;
+    left: 18px;
+}
+.box4 h3{
+    color: #000;
+    font-size: 28px;
+    font-family: 'DM Serif Display', serif;
+    padding: 15px 0;
+}
+.box4 p{
+    font-size: 16px;
+    color: rgb(107, 103, 96);
+    line-height: 1.5;
+}
+.section-part{
+    width: 100%;
+    height: 25vh;
+    background-color: rgb(45,38,64);
+    margin-top: 80px;
+    align-items: center;
+}
+.heading4{
+    width: 40%;
+    padding: 2%;
+}
+.heading4 h2{
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+    color: #ffff;
+    width: 80%;
+    margin-left: 40px;
+}
+.nav-link-box4{
+    width: 40%;
+    padding: 2%;
+    text-align: center;
+}
+.nav-link-box4 a{
+    color: #ffff;
+    font-size: 24px;
+    text-transform: uppercase;
+    border: 2px solid rgb(209, 208, 206);
+    border-radius: 8px;
+    padding: 15px;
+    display: inline-block;
+}
+.footer-line{
+    background-color: rgb(114, 113, 113);
+    width: 100%;
+    height: 1px;
+}
+.nav-link-down{
+    text-align: center;
+}
+.nav-link-down a{
+    color: rgb(124, 119, 119);
+    font-size: 24px;
+    text-transform: uppercase;
+    padding: 15px;
+    display: inline-block;
+}
+.footer{
+    text-align: center;
+    background-color: rgb(45,38,64);
+    height: 8vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.footer div{
+    color: rgb(236, 233, 233);
+    font-size: 18px;
+}
+.icons i{
+    display: inline-block;
+    margin-left: 20px;
+    color: gray;
+    font-size: 28px;
+}
+.logo-link1{
+    padding: 10px 15px;
+    align-items: center;
+}
+.logo-link2{
+    color: rgb(45,38,64);
+    font-size: 28px;
+    font-family: 'DM Serif Display', serif;
+}
